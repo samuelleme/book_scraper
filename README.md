@@ -23,32 +23,6 @@ A command-line interface application for managing a small library. It allows for
 
 ---
 
-## Project Structure
-
-The project is organized into a main application module and a database package that handles data persistence and modeling.
-
-```
-/
-├── database/
-│ ├── books_scraper.py # Script to scrape data and create the DB
-│ ├── db_loader.py # Helper to process data with Pandas
-│ ├── models.py # SQLAlchemy ORM models
-│ └── example_queries.py # Standalone SQL query examples
-│
-├── crud_books.py # Functions for book-related views
-├── crud_books_db.py
-├── crud_loans.py # Functions for loan-related views
-├── crud_loans_db.py
-├── crud_users.py # Functions for user-related views
-├── crud_users_db.py
-├── db_connector.py # Handles DB session connection
-├── main.py # Main entry point for the application
-├── menu.py # Displays the main menu
-└── utils.py # Utility functions (date parsing, etc.)
-```
-
----
-
 ## Installation & Setup
 
 ### 1. Clone the repository
@@ -75,35 +49,4 @@ You should see a confirmation message:
 
 ### Interact with the menu:
 The application will present you with a menu of options. Enter the number corresponding to the action you wish to perform.
-
-```mathematica
-+==================================+
-|            Welcome!              |
-+==================================+
-
-1 - List books
-2 - List users
-3 - List active loans
-4 - List closed loans
-5 - Register user
-6 - Delete user
-7 - Create loan
-8 - Create return
-0 - Exit
-
-Enter the desired option:
-````
-
-### Database Schema
-The application uses five main tables to manage the library's data:
-
-**book:** Stores information about each book (title, ISBN, availability, etc.).
-
-**author:** Stores author details (name, country of origin).
-
-**user:** Stores library user information.
-
-**loan:** Tracks which user has borrowed which book, including loan and return dates.
-
-**book_author:** A many-to-many relationship table linking books to their authors.
 
